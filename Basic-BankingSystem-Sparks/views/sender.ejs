@@ -1,0 +1,30 @@
+<%- include("partials/header") %>
+
+
+<h1 class="view-header"> SENDER </h1>
+
+<div class='table table-dark'>
+
+        <table>
+            <thead class="thead-light">
+            <tr>
+                <th scope="col">Customer Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Credits</th>
+                <th></th>
+            </tr>
+            </thead>
+            <% for(let user of users){ %>
+                <tr>
+                    <td><%= user.name %></td>
+                    <td><%= user.email%></td>
+                    <td><%= user.credits%></td>
+                    <td><button class="select-btn"><a href="/sender/<%= user._id %>">Next >></a></button></td>
+                  
+                </tr>
+            <% } %>
+        </table>    
+</div>
+
+
+<%- include("partials/footer") %>

@@ -1,0 +1,44 @@
+<%- include("partials/header") %>
+
+<div class="container-fluid">
+<div  id="left-thing">
+<div class="card border-primary mb-3" style="max-width: 25rem;">
+    <div class="card-header"><h3>Sender</h3></div>
+    <div class="card-body text-primary">
+      <h5 class="card-title">Name  : <%= fromUser.name %></h5>
+      <p class="card-title">Credits  : <h4><%= fromUser.credits %></h4></p>
+    </div>
+  </div>
+</div>
+
+
+<div id="mid-thing">
+    <div class="card border-primary mb-3" style="max-width: 25rem;">
+      <div class="card-header">Enter Credits to send</div>
+      <div class="card-body text-primary">
+            <form action="/view/<%= fromUser._id %>/<%= toUser._id %>?_method=PUT" method="POST">
+                <label for="credit">Credits : </label>
+            <input type="number" name="credit" placeholder="ex : 2000" value="">
+            <button class="btn btn-primary">Transfer</button>
+            </form>
+        
+      </div>
+    </div>
+  </div>
+
+
+<div id="right-thing">
+  <div class="card border-primary mb-3" style="max-width: 25rem;">
+    <div class="card-header"><h3>Reciver</h3></div>
+    <div class="card-body text-primary">
+      <h5 class="card-title">Name  : <%= toUser.name %></h5>
+      <p class="card-title">Credits  :<h4> <%= toUser.credits %></h4></p>
+    </div>
+  </div>
+</div>
+
+</div>
+
+
+
+<%- include("partials/footer") %>
